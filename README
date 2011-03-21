@@ -1,0 +1,84 @@
+------------------------------------------------------------------------
+                            Y PONG
+    Author: Jacob Essex
+------------------------------------------------------------------------
+
+* Background
+* Installation
+* Running 
+* Papers, Credits and Resources used
+
+------------------------------------------------------------------------
+--Background/Comments (Ramblings of a lunatic)
+    
+Why Pong?
+I know the programing competition said images (and usually based around
+fractals). I would claim that it is in the same area... ish. I wanted to
+explore writing games in a functional language and if possible try to avoid
+writing the game in a functional language in an imperative way.
+
+Pong also gave me the opportunity to use some of the features of Yampa
+over other FRP frameworks such as Reactive where (I believe) it is easy to 
+run into space leaks when removing objects.
+
+I found it conceptually a bit tricky to get my head around (Although having
+arrows thrown into the mix didn't help) and I am fairly sure I haven't got my
+head around it yet (A longer time period might help, this was written in two evenings).
+
+The length of the program, which I am sure is far longer than it could be is probably
+in part due to not having utilised Yampa anywhere  near fully. 
+
+It isn't finished by any means, but the main thing that I haven't added is the score.
+
+As a program to start experimenting with FRP, I think it has been a success,
+as a program to enter to a competition I probably should have stuck to technologies
+and concepts I know.
+
+------------------------------------------------------------------------
+--Installation
+
+This has only been built using the latest version of GHC (6.12.3). It
+hasn't been tested on anything else. It also requires the Arrows extension
+which should be automatically enabled when loading main.hs. If not 
+just add the -XArrows flag when starting ghc/ghci
+
+This requires the following packages, all available on Hackage or 
+using cabal install <package-name>
+sdl, yampa, monad-loops
+
+Note that some of these require the C libraries, which should be common
+enough to be available via your package manager
+
+Build main.hs, if running through ghci run the function `main`
+
+
+------------------------------------------------------------------------
+--Running
+
+By default, the paddles are controlled using S/D and J/K
+To quit, press Esc
+
+
+------------------------------------------------------------------------
+--Papers, Credits and Resources used
+
+I used the associative list code (IdentityList.hs) from the space
+invaders game. The code is licenced under the BSD licence so there
+is no issues with its use or redistribution
+
+Papers:
+* The Yampa Arcade
+* Functional Programming and 3D games
+* Arrows, Robots and Functional Programming
+* Arrows, Robots and Functional Programming Continued
+
+Credits:
+* The creator of Zenburn, for saving my eyes and the colour scheme of the game
+* The samples and diagrams at lambdor.net
+* The following open source FRP games implemented using 
+    Yampa.
+        -Frag
+        -Haskelloids
+        -Cuboid
+        -Space invaders
+    Most, if not all, of these are available via Hackage
